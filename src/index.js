@@ -8,7 +8,12 @@ const port = 3000;
 const db = require('./config/db')
 
 db.Connect();
-
+app.use(express.json())
+app.use(
+    express.urlencoded({
+        extended: true,
+    })
+);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use(morgan('combined'))

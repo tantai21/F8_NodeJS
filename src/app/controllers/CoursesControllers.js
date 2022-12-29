@@ -16,8 +16,13 @@ class CoursesControllers {
     }
     // POST
     store(req, res, next) {
-        // const course = new Courses(req.body);
-        res.json(req.body)
+        req.body.image = `https://img.youtube.com/vi/${req.body.idVideo}/sddefault.jpg`
+        const course = new Courses(req.body);
+        course.save()
+            .then(() => res.redirect('/'))
+            .catch((e) => {
+
+            });
     }
 }
 

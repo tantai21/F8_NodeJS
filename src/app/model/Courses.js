@@ -8,7 +8,7 @@ const Courses = new Schema({
     image: { type: String },
     slug: { type: String },
     idVideo: { type: String },
-    createAt: { type: Date, default: Date.now },
-    updateAt: { type: Date, default: Date.now }
+}, {
+    timestamps: true
 });
 module.exports = mongoose.model('Courses', Courses);
