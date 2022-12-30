@@ -1,8 +1,10 @@
 const Courses = require('../model/Courses');
-const { mongooseObj } = require('../../util/mongoose')
+const { mongooseObj, mutipleMongooseObj } = require('../../util/mongoose')
 class MeControllers {
     storedCourses(req, res, next) {
-        res.render('me/stored-courses')
+        Courses.find({})
+            .then(course => res.render('me/stored-courses', { course: mutipleMongooseObj(course) }))
+            .catch(next)
     }
 
 }
