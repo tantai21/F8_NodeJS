@@ -1,0 +1,39 @@
+<div class="mt-4">
+  <h3>Chỉnh sửa khoá học</h3>
+  <form method="POST" action="/courses/{{course._id}}">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Tên khoá học</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="Nhập tên khoá học"
+        value="{{course.name}}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Thông tin khoá học</label>
+      <textarea
+        type="text"
+        class="form-control"
+        id="description"
+        name="description"
+        placeholder="Mô tả khoá học "
+      >{{course.description}}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Video ID</label>
+      <input
+        type="text"
+        class="form-control"
+        id="idVideo"
+        name="idVideo"
+        placeholder="ID VIDEO "
+        value="{{course.idVideo}}"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>

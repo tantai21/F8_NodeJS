@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const handlebars = require('express-handlebars')
+const methodOverride = require('method-override')
 const path = require('path');
 const route = require('./routes/index.js')
 const app = express();
