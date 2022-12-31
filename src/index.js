@@ -29,6 +29,7 @@ app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'resources', 'views'))
 
 
+app.use(methodOverride('_method'))
 route(app)
 
 app.listen(port, () => {

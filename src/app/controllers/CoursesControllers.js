@@ -32,6 +32,15 @@ class CoursesControllers {
 
             });
     }
+
+    //PUT
+    update(req, res, next) {
+        Courses.updateOne({ _id: req.params.id }, req.body)
+            .then(() => res.redirect('/me/stored/courses'))
+            .catch(next)
+
+
+    }
 }
 
 module.exports = new CoursesControllers;
