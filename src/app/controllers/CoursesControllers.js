@@ -1,5 +1,7 @@
 const Courses = require('../model/Courses');
 const { mongooseObj } = require('../../util/mongoose')
+var mongoose = require('mongoose');
+
 class CoursesControllers {
 
     //GET /Searach
@@ -33,13 +35,16 @@ class CoursesControllers {
             });
     }
 
-    //PUT
+    //DELETE
     update(req, res, next) {
-        Courses.updateOne({ _id: req.params.id }, req.body)
+        Courses.updateOne({ id: req.params.id }, req.body)
             .then(() => res.redirect('/me/stored/courses'))
             .catch(next)
-
-
+    }
+    delete(req, res, next) {
+        Courses.deleteOne({ id: req.params.id })
+            .then(() => res.redirect('back'))
+            .catch(next)
     }
 }
 
