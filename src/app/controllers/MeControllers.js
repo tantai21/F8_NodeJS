@@ -6,6 +6,11 @@ class MeControllers {
             .then(course => res.render('me/stored-courses', { course: mutipleMongooseObj(course) }))
             .catch(next)
     }
+    trashCourses(req, res, next) {
+        Courses.findDeleted({})
+            .then(course => res.render('me/trash-courses', { course: mutipleMongooseObj(course) }))
+            .catch(next)
+    }
 
 }
 
